@@ -1691,10 +1691,12 @@ void Ekf2::runEkfReinit(const hrt_abstime sensor_time_us)
 		_ekf_reinit_eval.update(_ekf.isVehicleAtRest());
 
 		if (_ekf_reinit_eval.shouldResetAll()) {
+			PX4_INFO("Long motion detected: Reinitialize EKF\n");
 			_ekf.reset(sensor_time_us);
 			_ekf_reinit_eval.reset();
 
 		} else if (_ekf_reinit_eval.shouldResetStatesAndCovariances()) {
+			PX4_INFO("Motion detected: Reset EKF states and covariances\n");
 			_ekf.resetStatesAndCovariances();
 			_ekf_reinit_eval.reset();
 		}
