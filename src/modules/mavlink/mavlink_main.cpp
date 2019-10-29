@@ -1756,23 +1756,20 @@ Mavlink::configure_streams_to_default(const char *configure_single_stream)
 
 	/* fallthrough */
 	case MAVLINK_MODE_CUSTOM:
-		configure_stream_local("ALTITUDE", 10.0f);
 		// configure_stream_local("ATTITUDE", unlimited_rate);
+		configure_stream_local("ALTITUDE", 10.0f);
 		configure_stream_local("ATTITUDE_QUATERNION", unlimited_rate);
 		configure_stream_local("CAMERA_TRIGGER", unlimited_rate);
 		configure_stream_local("ESTIMATOR_STATUS", 1.0f);
 		configure_stream_local("EXTENDED_SYS_STATE", 1.0f);
 		configure_stream_local("GLOBAL_POSITION_INT", 10.0f);
 		configure_stream_local("GPS_RAW_INT", 1.0f);
-		configure_stream_local("HOME_POSITION", 0.5f);
 		configure_stream_local("HIGHRES_IMU", unlimited_rate);
 		configure_stream_local("LOCAL_POSITION_NED", 50.0f);
 		configure_stream_local("SYS_STATUS", 5.0f);
 		configure_stream_local("SYSTEM_TIME", 1.0f);
 		configure_stream_local("TIMESYNC", 10.0f);
-		configure_stream_local("TRAJECTORY_REPRESENTATION_WAYPOINTS", 5.0f);
-		configure_stream_local("VFR_HUD", 25.0f);
-		configure_stream_local("WIND_COV", 2.0f);
+		configure_stream_local("RC_CHANNELS", 20.0f);
 		break;
 
 	case MAVLINK_MODE_CONFIG:
